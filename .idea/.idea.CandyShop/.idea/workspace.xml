@@ -4,7 +4,6 @@
     <list default="true" id="9e8b4c47-b901-4077-8e53-2284befd96ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +83,7 @@
       <updated>1680103872492</updated>
       <workItem from="1680103875709" duration="537000" />
       <workItem from="1680129884799" duration="406000" />
+      <workItem from="1680184381395" duration="753000" />
     </task>
     <servers />
   </component>
