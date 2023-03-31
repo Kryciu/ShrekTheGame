@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9e8b4c47-b901-4077-8e53-2284befd96ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekBody.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekBody.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekEyes.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekEyes.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekHead.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/M_ShrekHead.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +93,8 @@
       <workItem from="1680193106543" duration="4864000" />
       <workItem from="1680204185943" duration="1103000" />
       <workItem from="1680222737257" duration="1777000" />
+      <workItem from="1680273370061" duration="4100000" />
+      <workItem from="1680294970057" duration="7300000" />
     </task>
     <servers />
   </component>
