@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 315992253}
   - component: {fileID: 315992256}
   - component: {fileID: 315992257}
+  - component: {fileID: 315992258}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -768,6 +769,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 1231657444}
   Cam: {fileID: 315992254}
+--- !u!114 &315992258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315992252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f690cb8a5f5bdfe4c8bf89ac5a0dfdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 315992254}
+  Player: {fileID: 1231657447}
 --- !u!1 &375290643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,12 +1815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c2a99ffb02db1419ff87b686d8bbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hunger: 100
-  Thirsty: 100
-  Toilet: 100
-  Hygiene: 100
-  Sleep: 100
-  Fun: 100
+  ShrekData: {fileID: 11400000, guid: fb9af77b183898c4395cd68489fa20bf, type: 2}
   ThirstyWaitTime: 2
   HungerWaitTime: 4
   ToiletWaitTime: 1.5

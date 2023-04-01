@@ -14,32 +14,25 @@ public class Needs : MonoBehaviour
     //Needs
     #region NeedsDefaultValues
 
-    public float Hunger = 100;
-    public float Thirsty = 100;
-    public float Toilet = 100;
-    public float Hygiene = 100;
-    public float Sleep = 100;
-    public float Fun = 100;
+    public DefaultShrekData ShrekData;
+    private float Hunger;
+    private float Thirsty;
+    private float Toilet;
+    private float Hygiene;
+    private float Sleep;
+    private float Fun;
 
     #endregion
 
     //Delays
     #region DelaysDefaultValues
 
-    public float ThirstyWaitTime = 1.0f;
-    public float HungerWaitTime = 1.0f;
-    public float ToiletWaitTime = 1.0f;
-    public float HygieneWaitTime = 1.0f;
-    public float SleepWaitTime = 1.0f;
-    public float FunWaitTime = 1.0f;
-    
-    //Delay holders
-    private float _ThirstyWaitTime;
-    private float _HungerWaitTime;
-    private float _ToiletWaitTime;
-    private float _HygieneWaitTime;
-    private float _SleepWaitTime;
-    private float _FunWaitTime;
+    private float ThirstyWaitTime;
+    private float HungerWaitTime;
+    private float ToiletWaitTime;
+    private float HygieneWaitTime;
+    private float SleepWaitTime;
+    private float FunWaitTime;
 
     #endregion
 
@@ -72,12 +65,20 @@ public class Needs : MonoBehaviour
 
     void Awake()
     {
-        _ThirstyWaitTime = ThirstyWaitTime;
-        _HungerWaitTime = HungerWaitTime;
-        _ToiletWaitTime = ToiletWaitTime;
-        _HygieneWaitTime = HygieneWaitTime;
-        _SleepWaitTime = SleepWaitTime; 
-        _FunWaitTime = FunWaitTime;
+        //Initialize default variables
+        Hunger = ShrekData.Hunger;
+        Thirsty = ShrekData.Thirsty;
+        Toilet = ShrekData.Toilet;
+        Hygiene = ShrekData.Hygiene;
+        Sleep = ShrekData.Sleep;
+        Fun = ShrekData.Fun;
+
+        ThirstyWaitTime = ShrekData.ThirstyRate;
+        HungerWaitTime = ShrekData.HungerRate;
+        ToiletWaitTime = ShrekData.ToiletRate;
+        HygieneWaitTime = ShrekData.HygieneRate;
+        SleepWaitTime = ShrekData.SleepRate;
+        FunWaitTime = ShrekData.FunRate;
     }
 
     void Start()
@@ -101,7 +102,7 @@ public class Needs : MonoBehaviour
         {
             Thirsty = Thirsty - 1;
             UpdateSlider(ThirstySlider, Thirsty);
-            ThirstyWaitTime = _ThirstyWaitTime;
+            ThirstyWaitTime = ShrekData.ThirstyRate;
 
             if (Thirsty <= 50)
             {
@@ -141,7 +142,7 @@ public class Needs : MonoBehaviour
         {
             Hunger = Hunger - 1;
             UpdateSlider(HungerSlider, Hunger);
-            HungerWaitTime = _HungerWaitTime;
+            HungerWaitTime = ShrekData.HungerRate;
             
             if (Hunger <= 50)
             {
@@ -181,7 +182,7 @@ public class Needs : MonoBehaviour
         {
             Toilet = Toilet - 1;
             UpdateSlider(ToiletSlider, Toilet);
-            ToiletWaitTime = _ToiletWaitTime;
+            ToiletWaitTime = ShrekData.ToiletRate;
             
             if (Toilet <= 50)
             {
@@ -221,7 +222,7 @@ public class Needs : MonoBehaviour
         {
             Hygiene = Hygiene - 1;
             UpdateSlider(HygieneSlider, Hygiene);
-            HygieneWaitTime = _HygieneWaitTime;
+            HygieneWaitTime = ShrekData.HygieneRate;
             
             if (Hygiene <= 50)
             {
@@ -261,7 +262,7 @@ public class Needs : MonoBehaviour
         {
             Sleep = Sleep - 1;
             UpdateSlider(SleepSlider, Sleep);
-            SleepWaitTime = _SleepWaitTime;
+            SleepWaitTime = ShrekData.SleepRate;
             
             if (Sleep <= 50)
             {
@@ -301,7 +302,7 @@ public class Needs : MonoBehaviour
         {
             Fun = Fun - 1;
             UpdateSlider(FunSlider, Fun);
-            FunWaitTime = _FunWaitTime;
+            FunWaitTime = ShrekData.FunRate;
             
             if (Fun <= 50)
             {
