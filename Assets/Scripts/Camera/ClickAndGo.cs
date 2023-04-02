@@ -8,16 +8,20 @@ public class ClickAndGo : MonoBehaviour
 {
     public Camera MainCamera;
     public NavMeshAgent Player;
+    public bool UseClickAndGo;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (UseClickAndGo)
         {
-            RaycastHit hit;
-            
-            if(Physics.Raycast(MainCamera.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            if (Input.GetMouseButtonDown(0))
             {
-                Player.SetDestination(hit.point);
+                RaycastHit hit;
+            
+                if(Physics.Raycast(MainCamera.ScreenPointToRay(Input.mousePosition), out hit, 100))
+                {
+                    Player.SetDestination(hit.point);
+                }
             }
         }
     }

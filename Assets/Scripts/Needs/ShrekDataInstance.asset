@@ -12,21 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd6fd26d49b6a64faf75439f54a3b5e, type: 3}
   m_Name: ShrekDataInstance
   m_EditorClassIdentifier: 
-  Hunger: 100
-  Thirsty: 100
-  Toilet: 100
-  Hygiene: 100
-  Sleep: 100
-  Fun: 100
+  Hunger: 65
+  Thirsty: 55
+  Toilet: 60
+  Hygiene: 70
+  Sleep: 70
+  Fun: 60
   HungerRate: 3
   ThirstyRate: 4
   ToiletRate: 2
   HygieneRate: 5
   SleepRate: 6
   FunRate: 7
-  HungerRegenPlace: {fileID: 0}
-  ThirstyRegenPlace: {fileID: 0}
-  ToiletRegenPlace: {fileID: 0}
-  HygieneRegenPlace: {fileID: 0}
-  SleepRateRegenPlace: {fileID: 0}
-  FunRegenPlace: {fileID: 0}
