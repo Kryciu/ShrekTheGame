@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager;
@@ -13,8 +14,6 @@ using Random = UnityEngine.Random;
 public class Needs : MonoBehaviour
 {
     //Needs
-    #region NeedsDefaultValues
-
     public DefaultShrekData ShrekData;
     private float Hunger;
     private float Thirsty;
@@ -23,11 +22,7 @@ public class Needs : MonoBehaviour
     private float Sleep;
     private float Fun;
 
-    #endregion
-
     //Delays
-    #region DelaysDefaultValues
-
     private float ThirstyWaitTime;
     private float HungerWaitTime;
     private float ToiletWaitTime;
@@ -36,11 +31,7 @@ public class Needs : MonoBehaviour
     private float FunWaitTime;
     private float MoveWaitTime;
 
-    #endregion
-
     //Sliders
-    #region Sliders
-
     public Slider HungerSlider;
     public Slider ThirstySlider;
     public Slider ToiletSlider;
@@ -48,11 +39,7 @@ public class Needs : MonoBehaviour
     public Slider SleepSlider;
     public Slider FunSlider;
 
-    #endregion
-
     //AI
-    #region AI
-
     public NavMeshAgent Player;
     public GameObject ThirstyRegen;
     public GameObject HungerRegen;
@@ -66,8 +53,6 @@ public class Needs : MonoBehaviour
     public bool IsCurrentlyRegenerating;
     [HideInInspector]
     public bool IsCurrentlyMoving;
-    
-    #endregion
 
     void Awake()
     {
@@ -96,262 +81,27 @@ public class Needs : MonoBehaviour
         SetMaxNeeds(HygieneSlider, Hygiene);
         SetMaxNeeds(SleepSlider, Sleep);
         SetMaxNeeds(FunSlider, Fun);
+
+        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime));
+        StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime));
+        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime));
+        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime));
+        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime));
+        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime));
     }
 
     void Update()
     {
-        #region ThirstyUpdate
-        if (ThirstyWaitTime > 0)
-        {
-            ThirstyWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Thirsty = Thirsty - 1;
-            UpdateSlider(ThirstySlider, Thirsty);
-            ThirstyWaitTime = ShrekData.ThirstyRate;
+        #region UpdateShrekAnimations
 
-            if (Thirsty <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(ThirstyRegen.transform.position);
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    Debug.Log("Started Thirsty regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, ThirstyRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(ThirstySlider, 100);
-                                Thirsty = 100;
-                                UpdateSlider(ThirstySlider, Thirsty);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Thirsty");
-                            }
-                        }
-                    }
-                }
-            }
+        if (Player.velocity.sqrMagnitude > 0)
+        {
+            ShrekAnimator.SetBool("IsWalking", true);
+        } else if (Player.velocity.sqrMagnitude == 0)
+        {
+            ShrekAnimator.SetBool("IsWalking", false);
         }
         #endregion
-        
-        #region HungerUpdate
-        if (HungerWaitTime > 0)
-        {
-            HungerWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Hunger = Hunger - 1;
-            UpdateSlider(HungerSlider, Hunger);
-            HungerWaitTime = ShrekData.HungerRate;
-            
-            if (Hunger <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(HungerRegen.transform.position);
-                    Debug.Log("Started Hunger regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, HungerRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(HungerSlider, 100);
-                                Hunger = 100;
-                                UpdateSlider(HungerSlider, Hunger);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Hunger");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #endregion
-        
-        #region ToiletUpdate
-        if (ToiletWaitTime > 0)
-        {
-            ToiletWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Toilet = Toilet - 1;
-            UpdateSlider(ToiletSlider, Toilet);
-            ToiletWaitTime = ShrekData.ToiletRate;
-            
-            if (Toilet <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(ToiletRegen.transform.position);
-                    Debug.Log("Started Toilet regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, ToiletRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(ToiletSlider, 100);
-                                Toilet = 100;
-                                UpdateSlider(ToiletSlider, Toilet);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Toilet");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #endregion
-        
-        #region HygieneUpdate
-        if (HygieneWaitTime > 0)
-        {
-            HygieneWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Hygiene = Hygiene - 1;
-            UpdateSlider(HygieneSlider, Hygiene);
-            HygieneWaitTime = ShrekData.HygieneRate;
-            
-            if (Hygiene <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(HygieneRegen.transform.position);
-                    Debug.Log("Started Hygiene regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, HygieneRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(HygieneSlider, 100);
-                                Hygiene = 100;
-                                UpdateSlider(HygieneSlider, Hygiene);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Hygiene");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #endregion
-        
-        #region SleepUpdate
-        if (SleepWaitTime > 0)
-        {
-            SleepWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Sleep = Sleep - 1;
-            UpdateSlider(SleepSlider, Sleep);
-            SleepWaitTime = ShrekData.SleepRate;
-            
-            if (Sleep <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(SleepRegen.transform.position);
-                    Debug.Log("Started Sleep regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, SleepRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(SleepSlider, 100);
-                                Sleep = 100;
-                                UpdateSlider(SleepSlider, Sleep);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Sleep");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #endregion
-        
-        #region FunUpdate
-        if (FunWaitTime > 0)
-        {
-            FunWaitTime -= Time.deltaTime;
-        }
-        else
-        {
-            Fun = Fun - 1;
-            UpdateSlider(FunSlider, Fun);
-            FunWaitTime = ShrekData.FunRate;
-            
-            if (Fun <= 50)
-            {
-                if (!IsCurrentlyRegenerating)
-                {
-                    ShrekAnimator.SetBool("IsWalking", true);
-                    IsCurrentlyRegenerating = true;
-                    Player.SetDestination(FunRegen.transform.position);
-                    Debug.Log("Started Fun regeneration");
-                }
-                else
-                {
-                    if (Vector3.Distance(Player.transform.position, FunRegen.transform.position) < 5)
-                    {
-                        if (Player.remainingDistance <= Player.stoppingDistance)
-                        {
-                            if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                            {
-                                ShrekAnimator.SetBool("IsWalking", false);
-                                SetMaxNeeds(FunSlider, 100);
-                                Fun = 100;
-                                UpdateSlider(FunSlider, Fun);
-                                IsCurrentlyRegenerating = false;
-                                Debug.Log("Regenerated Fun");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #endregion
-
         #region RandomRoam
 
         if (!IsCurrentlyRegenerating)
@@ -366,7 +116,6 @@ public class Needs : MonoBehaviour
                 if (!IsCurrentlyMoving)
                 {
                     Player.SetDestination(RandomNavmeshLocation(8.0f));
-                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyMoving = true;
                 }
                 else
@@ -375,7 +124,6 @@ public class Needs : MonoBehaviour
                     {
                         if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                         {
-                            ShrekAnimator.SetBool("IsWalking", false);
                             IsCurrentlyMoving = false;
                         }
                     }
@@ -395,13 +143,42 @@ public class Needs : MonoBehaviour
 
     public void SetMaxNeeds(Slider Value, float Needs)
     {
-        Value.maxValue = Needs;
+        Value.maxValue = 100;
         Value.value = Needs;
     }
 
     public void UpdateSlider(Slider Value, float Needs)
     {
         Value.value = Needs;
+    }
+
+    IEnumerator UpdateNeed(float NeedValue, Slider NeedSlider, GameObject NeedRegen, float WaitTime)
+    {
+        while (NeedValue > 0)
+        {
+            NeedValue = NeedValue - 1;
+            UpdateSlider(NeedSlider, NeedValue);
+
+            if (NeedValue <= 50)
+            {
+                if (!IsCurrentlyRegenerating)
+                {
+                    IsCurrentlyRegenerating = true;
+                    Player.SetDestination(NeedRegen.transform.position);
+                }
+                else
+                {
+                    if (Vector3.Distance(Player.transform.position, NeedRegen.transform.position) < 5)
+                    {
+                        SetMaxNeeds(NeedSlider, 100);
+                        NeedValue = 100;
+                        UpdateSlider(NeedSlider, NeedValue);
+                        IsCurrentlyRegenerating = false;
+                    }
+                }
+            }
+            yield return new WaitForSeconds(WaitTime);
+        }
     }
 
     #endregion
