@@ -15,12 +15,13 @@ MonoBehaviour:
   Hunger: 65
   Thirsty: 55
   Toilet: 60
-  Hygiene: 70
+  Hygiene: 75
   Sleep: 70
-  Fun: 60
+  Fun: 70
   HungerRate: 3
   ThirstyRate: 4
   ToiletRate: 2
   HygieneRate: 5
   SleepRate: 6
   FunRate: 7
+  MoveRate: 1

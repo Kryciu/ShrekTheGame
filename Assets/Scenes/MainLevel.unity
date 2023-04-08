@@ -648,7 +648,6 @@ GameObject:
   - component: {fileID: 315992253}
   - component: {fileID: 315992256}
   - component: {fileID: 315992257}
-  - component: {fileID: 315992258}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -767,25 +766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a039ca88f8df941b426922b724a5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 1231657444}
-  RotationSpeed: 5
-  MovingSpeed: 10
-  Offset: {x: 0, y: 0, z: 0}
---- !u!114 &315992258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315992252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f690cb8a5f5bdfe4c8bf89ac5a0dfdf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 315992254}
-  Player: {fileID: 1231657447}
-  UseClickAndGo: 0
+  Target: {fileID: 1231657445}
+  Speed: 1
+  Offset: {x: 0, y: 10, z: -15}
 --- !u!1 &375290643
 GameObject:
   m_ObjectHideFlags: 0
