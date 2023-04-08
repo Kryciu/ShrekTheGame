@@ -8,6 +8,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class Needs : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Needs : MonoBehaviour
     private float HygieneWaitTime;
     private float SleepWaitTime;
     private float FunWaitTime;
+    private float MoveWaitTime;
 
     #endregion
 
@@ -58,8 +60,12 @@ public class Needs : MonoBehaviour
     public GameObject HygieneRegen;
     public GameObject SleepRegen;
     public GameObject FunRegen;
+    public Animator ShrekAnimator;
 
-    private bool IsCurrentlyRegenerating;
+    [HideInInspector]
+    public bool IsCurrentlyRegenerating;
+    [HideInInspector]
+    public bool IsCurrentlyMoving;
     
     #endregion
 
@@ -79,6 +85,7 @@ public class Needs : MonoBehaviour
         HygieneWaitTime = ShrekData.HygieneRate;
         SleepWaitTime = ShrekData.SleepRate;
         FunWaitTime = ShrekData.FunRate;
+        MoveWaitTime = ShrekData.MoveRate;
     }
 
     void Start()
@@ -110,6 +117,7 @@ public class Needs : MonoBehaviour
                 {
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(ThirstyRegen.transform.position);
+                    ShrekAnimator.SetBool("IsWalking", true);
                     Debug.Log("Started Thirsty regeneration");
                 }
                 else
@@ -120,6 +128,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(ThirstySlider, 100);
                                 Thirsty = 100;
                                 UpdateSlider(ThirstySlider, Thirsty);
@@ -148,6 +157,7 @@ public class Needs : MonoBehaviour
             {
                 if (!IsCurrentlyRegenerating)
                 {
+                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(HungerRegen.transform.position);
                     Debug.Log("Started Hunger regeneration");
@@ -160,6 +170,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(HungerSlider, 100);
                                 Hunger = 100;
                                 UpdateSlider(HungerSlider, Hunger);
@@ -188,6 +199,7 @@ public class Needs : MonoBehaviour
             {
                 if (!IsCurrentlyRegenerating)
                 {
+                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(ToiletRegen.transform.position);
                     Debug.Log("Started Toilet regeneration");
@@ -200,6 +212,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(ToiletSlider, 100);
                                 Toilet = 100;
                                 UpdateSlider(ToiletSlider, Toilet);
@@ -228,6 +241,7 @@ public class Needs : MonoBehaviour
             {
                 if (!IsCurrentlyRegenerating)
                 {
+                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(HygieneRegen.transform.position);
                     Debug.Log("Started Hygiene regeneration");
@@ -240,6 +254,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(HygieneSlider, 100);
                                 Hygiene = 100;
                                 UpdateSlider(HygieneSlider, Hygiene);
@@ -268,6 +283,7 @@ public class Needs : MonoBehaviour
             {
                 if (!IsCurrentlyRegenerating)
                 {
+                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(SleepRegen.transform.position);
                     Debug.Log("Started Sleep regeneration");
@@ -280,6 +296,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(SleepSlider, 100);
                                 Sleep = 100;
                                 UpdateSlider(SleepSlider, Sleep);
@@ -308,6 +325,7 @@ public class Needs : MonoBehaviour
             {
                 if (!IsCurrentlyRegenerating)
                 {
+                    ShrekAnimator.SetBool("IsWalking", true);
                     IsCurrentlyRegenerating = true;
                     Player.SetDestination(FunRegen.transform.position);
                     Debug.Log("Started Fun regeneration");
@@ -320,6 +338,7 @@ public class Needs : MonoBehaviour
                         {
                             if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
                             {
+                                ShrekAnimator.SetBool("IsWalking", false);
                                 SetMaxNeeds(FunSlider, 100);
                                 Fun = 100;
                                 UpdateSlider(FunSlider, Fun);
@@ -331,6 +350,44 @@ public class Needs : MonoBehaviour
                 }
             }
         }
+        #endregion
+
+        #region RandomRoam
+
+        if (!IsCurrentlyRegenerating)
+        {
+            if (MoveWaitTime > 0)
+            {
+                MoveWaitTime -= Time.deltaTime;
+            }
+            else
+            {
+                MoveWaitTime = ShrekData.MoveRate;
+                if (!IsCurrentlyMoving)
+                {
+                    Player.SetDestination(RandomNavmeshLocation(8.0f));
+                    ShrekAnimator.SetBool("IsWalking", true);
+                    IsCurrentlyMoving = true;
+                }
+                else
+                {
+                    if (Player.remainingDistance <= Player.stoppingDistance)
+                    {
+                        if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
+                        {
+                            ShrekAnimator.SetBool("IsWalking", false);
+                            IsCurrentlyMoving = false;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            IsCurrentlyMoving = false;
+            MoveWaitTime = ShrekData.MoveRate;
+        }
+
         #endregion
     }
 
@@ -345,6 +402,22 @@ public class Needs : MonoBehaviour
     public void UpdateSlider(Slider Value, float Needs)
     {
         Value.value = Needs;
+    }
+
+    #endregion
+
+    #region RandomPointInNavMesh
+
+    //Find random nav mesh location
+    public Vector3 RandomNavmeshLocation(float radius) {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+            finalPosition = hit.position;            
+        }
+        return finalPosition;
     }
 
     #endregion

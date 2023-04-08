@@ -20,4 +20,5 @@ public class DefaultShrekData : ScriptableObject
     public float HygieneRate = 1.0f;
     public float SleepRate = 1.0f;
     public float FunRate = 1.0f;
+    public float MoveRate = 1.0f;
 }

@@ -768,7 +768,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1231657444}
-  Cam: {fileID: 315992254}
+  RotationSpeed: 5
+  MovingSpeed: 10
+  Offset: {x: 0, y: 0, z: 0}
 --- !u!114 &315992258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 315992254}
   Player: {fileID: 1231657447}
+  UseClickAndGo: 0
 --- !u!1 &375290643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,12 +1819,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShrekData: {fileID: 11400000, guid: fb9af77b183898c4395cd68489fa20bf, type: 2}
-  ThirstyWaitTime: 2
-  HungerWaitTime: 4
-  ToiletWaitTime: 1.5
-  HygieneWaitTime: 5
-  SleepWaitTime: 7
-  FunWaitTime: 3
   HungerSlider: {fileID: 2033434457}
   ThirstySlider: {fileID: 242226970}
   ToiletSlider: {fileID: 1554874667}
@@ -1835,6 +1832,9 @@ MonoBehaviour:
   HygieneRegen: {fileID: 1900307885}
   SleepRegen: {fileID: 753472355}
   FunRegen: {fileID: 1837380517}
+  ShrekAnimator: {fileID: 1707200244}
+  IsCurrentlyRegenerating: 0
+  IsCurrentlyMoving: 0
 --- !u!195 &1231657447
 NavMeshAgent:
   m_ObjectHideFlags: 0
