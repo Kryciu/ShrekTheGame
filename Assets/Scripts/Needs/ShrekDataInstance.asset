@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf5df570481335acfc8461825365359ed5b661d469420d91f51eb906c37d074b
-size 590
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd6fd26d49b6a64faf75439f54a3b5e, type: 3}
+  m_Name: ShrekDataInstance
+  m_EditorClassIdentifier: 
+  Hunger: 65
+  Thirsty: 55
+  Toilet: 60
+  Hygiene: 75
+  Sleep: 70
+  Fun: 70
+  HungerRate: 3
+  ThirstyRate: 4
+  ToiletRate: 2
+  HygieneRate: 5
+  SleepRate: 6
+  FunRate: 7
+  MoveRate: 1
