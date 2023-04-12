@@ -18,10 +18,10 @@ MonoBehaviour:
   Hygiene: 100
   Sleep: 100
   Fun: 100
-  HungerRate: 0.95
-  ThirstyRate: 0.7
-  ToiletRate: 1.1
-  HygieneRate: 0.85
-  SleepRate: 0.78
-  FunRate: 0.97
-  MoveRate: 1
+  HungerRate: 1.5
+  ThirstyRate: 1.65
+  ToiletRate: 1.55
+  HygieneRate: 1.75
+  SleepRate: 1.7
+  FunRate: 1.57
+  MoveRate: 3

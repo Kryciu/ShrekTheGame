@@ -12,13 +12,19 @@ using UnityEngine.AI;
 using Random = UnityEngine.Random;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 
 public class Needs : MonoBehaviour
 {
+    //Shrek Actions
+    public EventReference ActionSound;
+    private EventInstance ActionInstance;
+    
     //Footsteps
     public EventReference FootstepsSound;
     public float FootstepsSpeed;
+    public Camera MainCam;
 
     //Needs
     public DefaultShrekData ShrekData;
@@ -55,7 +61,6 @@ public class Needs : MonoBehaviour
     public GameObject SleepRegen;
     public GameObject FunRegen;
     public Animator ShrekAnimator;
-    public GameObject ShrekGO;
 
     [HideInInspector]
     public bool IsCurrentlyRegenerating;
@@ -85,12 +90,13 @@ public class Needs : MonoBehaviour
     {
         if (IsCurrentlyMoving)
         {
-            RuntimeManager.PlayOneShot(FootstepsSound);
+            RuntimeManager.PlayOneShotAttached(FootstepsSound,MainCam.gameObject);
         }
     }
     void Start()
     {
-        InvokeRepeating("CallFootsteps", 0, FootstepsSpeed);
+        ActionInstance = RuntimeManager.CreateInstance(ActionSound);
+        InvokeRepeating(nameof(CallFootsteps), 0, FootstepsSpeed);
 
         SetMaxNeeds(HungerSlider, Hunger);
         SetMaxNeeds(ThirstySlider, Thirsty);
@@ -99,17 +105,17 @@ public class Needs : MonoBehaviour
         SetMaxNeeds(SleepSlider, Sleep);
         SetMaxNeeds(FunSlider, Fun);
 
-        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime, 5.0f, "IsDrinking"));
-        StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime,5.0f,"IsDrinking"));
-        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime, 5.0f, "IsSitting"));
-        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime, 10.0f, "IsSitting"));
-        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime, 6.0f, "IsLying"));
-        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime, 4.0f, "IsYelling"));
+        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime, 7.0f, "IsDrinking","thirsty",false));
+        StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime,12.0f,"IsDrinking","hunger",false));
+        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime, 11.0f, "IsSitting","toilet",false));
+        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime, 10.0f, "IsSitting","hygiene start",false));
+        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime, 10.0f, "IsLying","sleep",true));
+        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime, 6.0f, "IsYelling","fun",false));
     }
 
     void Update()
-
     {
+        ActionInstance.set3DAttributes(RuntimeUtils.To3DAttributes(MainCam.gameObject));
         #region UpdateShrekAnimations
         if (Player.velocity.sqrMagnitude > 0)
         {
@@ -158,7 +164,7 @@ public class Needs : MonoBehaviour
         Value.value = Needs;
     }
 
-    IEnumerator UpdateNeed(float NeedValue, Slider NeedSlider, GameObject NeedRegen, float WaitTime, float AnimationWaitTime, String AnimationName)
+    IEnumerator UpdateNeed(float NeedValue, Slider NeedSlider, GameObject NeedRegen, float WaitTime, float AnimationWaitTime, String AnimationName, String ActionName, bool UseFadeOut)
     {
         while (NeedValue > 0)
         {
@@ -174,13 +180,22 @@ public class Needs : MonoBehaviour
                 }
                 else
                 {
-                    if (Vector3.Distance(Player.transform.position, NeedRegen.transform.position) < 5)
+                    if (Vector3.Distance(Player.transform.position, NeedRegen.transform.position) < 2)
                     {
                         ShrekAnimator.SetBool(AnimationName,true);
-                        StartCoroutine(CheckAnimationState());
+                        if (!IsPlaying(ActionInstance))
+                        {
+                            StartCoroutine(CheckAnimationState());
+                            ActionInstance.setParameterByNameWithLabel("shrek's actionn", ActionName);
+                            ActionInstance.start();
+                        }
                         IEnumerator CheckAnimationState()
                         {
                             yield return new WaitForSeconds(AnimationWaitTime);
+                            if (UseFadeOut)
+                            {
+                                ActionInstance.stop(STOP_MODE.ALLOWFADEOUT);
+                            }
                             ShrekAnimator.SetBool(AnimationName,false);
                             SetMaxNeeds(NeedSlider, 100);
                             NeedValue = 100;
@@ -211,4 +226,11 @@ public class Needs : MonoBehaviour
     }
 
     #endregion
+    
+    bool IsPlaying(EventInstance instance)
+    {
+        PLAYBACK_STATE state;
+        instance.getPlaybackState(out state);
+        return state == PLAYBACK_STATE.PLAYING;
+    }
 }

@@ -9,6 +9,7 @@ public class soundManager : MonoBehaviour
 
     public EventReference music;
     public EventReference Dialogues;
+    public Needs NeedsScript;
 
     private EventInstance DialoguesInstance;
     private bool ShouldPlay = true;
@@ -23,12 +24,15 @@ public class soundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!IsPlaying(DialoguesInstance))
+        if (NeedsScript.IsCurrentlyRegenerating)
         {
-            if (ShouldPlay)
+            if(!IsPlaying(DialoguesInstance))
             {
-                DialoguesInstance.start();
-                StartCoroutine(RandomDialogue());
+                if (ShouldPlay)
+                {
+                    DialoguesInstance.start();
+                    StartCoroutine(RandomDialogue());
+                }
             }
         }
         DialoguesInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
