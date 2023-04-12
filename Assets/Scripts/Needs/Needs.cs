@@ -82,12 +82,12 @@ public class Needs : MonoBehaviour
         SetMaxNeeds(SleepSlider, Sleep);
         SetMaxNeeds(FunSlider, Fun);
 
-        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime));
-        StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime));
-        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime));
-        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime));
-        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime));
-        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime));
+        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime,5.0f,"IsDrinking"));
+        //StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime));
+        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime,5.0f,"IsSitting"));
+        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime,10.0f,"IsSitting"));
+        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime,6.0f,"IsLying"));
+        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime,4.0f,"IsYelling"));
     }
 
     void Update()
@@ -152,7 +152,7 @@ public class Needs : MonoBehaviour
         Value.value = Needs;
     }
 
-    IEnumerator UpdateNeed(float NeedValue, Slider NeedSlider, GameObject NeedRegen, float WaitTime)
+    IEnumerator UpdateNeed(float NeedValue, Slider NeedSlider, GameObject NeedRegen, float WaitTime, float AnimationWaitTime, String AnimationName)
     {
         while (NeedValue > 0)
         {
@@ -170,10 +170,17 @@ public class Needs : MonoBehaviour
                 {
                     if (Vector3.Distance(Player.transform.position, NeedRegen.transform.position) < 5)
                     {
-                        SetMaxNeeds(NeedSlider, 100);
-                        NeedValue = 100;
-                        UpdateSlider(NeedSlider, NeedValue);
-                        IsCurrentlyRegenerating = false;
+                        ShrekAnimator.SetBool(AnimationName,true);
+                        StartCoroutine(CheckAnimationState());
+                        IEnumerator CheckAnimationState()
+                        {
+                            yield return new WaitForSeconds(AnimationWaitTime);
+                            ShrekAnimator.SetBool(AnimationName,false);
+                            SetMaxNeeds(NeedSlider, 100);
+                            NeedValue = 100;
+                            UpdateSlider(NeedSlider, NeedValue);
+                            IsCurrentlyRegenerating = false;
+                        }
                     }
                 }
             }
