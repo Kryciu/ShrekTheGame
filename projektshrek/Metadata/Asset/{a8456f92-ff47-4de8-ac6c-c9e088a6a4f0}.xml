@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{a8456f92-ff47-4de8-ac6c-c9e088a6a4f0}">
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
+		<property name="assetPath">
+			<value>clothing/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{daf08e20-9444-4099-aa29-28ac21e7c1c3}</destination>
+		</relationship>
+	</object>
+</objects>

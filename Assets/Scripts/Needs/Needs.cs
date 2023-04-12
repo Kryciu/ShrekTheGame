@@ -13,6 +13,11 @@ using Random = UnityEngine.Random;
 
 public class Needs : MonoBehaviour
 {
+
+    private FMOD.Studio.EventInstance footsteps;
+    public FMODUnity.EventReference footstepsSound;
+
+
     //Needs
     public DefaultShrekData ShrekData;
     private float Hunger;
@@ -82,24 +87,30 @@ public class Needs : MonoBehaviour
         SetMaxNeeds(SleepSlider, Sleep);
         SetMaxNeeds(FunSlider, Fun);
 
-        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime,5.0f,"IsDrinking"));
+        StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime, 5.0f, "IsDrinking"));
         //StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime));
-        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime,5.0f,"IsSitting"));
-        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime,10.0f,"IsSitting"));
-        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime,6.0f,"IsLying"));
-        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime,4.0f,"IsYelling"));
+        StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime, 5.0f, "IsSitting"));
+        StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime, 10.0f, "IsSitting"));
+        StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime, 6.0f, "IsLying"));
+        StartCoroutine(UpdateNeed(Fun, FunSlider, FunRegen, FunWaitTime, 4.0f, "IsYelling"));
     }
 
     void Update()
+
     {
         #region UpdateShrekAnimations
 
         if (Player.velocity.sqrMagnitude > 0)
         {
-            ShrekAnimator.SetBool("IsWalking", true);
+        ShrekAnimator.SetBool("IsWalking", true);
+        footsteps = FMODUnity.RuntimeManager.CreateInstance(footstepsSound);
+        footsteps = FMODUnity.EventReference.Find("event:/footsteps/footsteps");
+        footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        footsteps.start();
         } else if (Player.velocity.sqrMagnitude == 0)
         {
             ShrekAnimator.SetBool("IsWalking", false);
+            footsteps.release();
         }
         #endregion
         #region RandomRoam

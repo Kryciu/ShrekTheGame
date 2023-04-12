@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{30768339-2e07-4eba-966d-895085d67324}">
+		<property name="color">
+			<value>Purple</value>
+		</property>
+		<property name="assetPath">
+			<value>shrek's action/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{daf08e20-9444-4099-aa29-28ac21e7c1c3}</destination>
+		</relationship>
+	</object>
+</objects>

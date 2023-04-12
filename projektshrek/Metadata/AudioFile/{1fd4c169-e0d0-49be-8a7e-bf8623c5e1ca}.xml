@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1fd4c169-e0d0-49be-8a7e-bf8623c5e1ca}">
+		<property name="assetPath">
+			<value>shrek dialog/shrek dialog/Shrek dial -mała wyprawa ośle.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{daf08e20-9444-4099-aa29-28ac21e7c1c3}</destination>
+		</relationship>
+	</object>
+</objects>

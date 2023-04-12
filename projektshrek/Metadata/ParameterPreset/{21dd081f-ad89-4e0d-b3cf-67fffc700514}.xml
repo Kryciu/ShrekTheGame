@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{21dd081f-ad89-4e0d-b3cf-67fffc700514}">
+		<property name="name">
+			<value>shrek's action</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7fe7fd1e-e6e3-4240-aee7-57daee7b3d46}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{97d44a95-2e67-4365-9bca-ab4954b4252f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{97d44a95-2e67-4365-9bca-ab4954b4252f}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Value A</value>
+			<value>Value B</value>
+			<value>Value C</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

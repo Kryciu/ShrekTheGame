@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{cc343809-29fa-40a9-8f47-a63e0b30c3d3}">
+		<property name="name">
+			<value>shrek's actionn</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7fe7fd1e-e6e3-4240-aee7-57daee7b3d46}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a5999cfc-f557-49a6-85eb-8ec6e03279ec}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a5999cfc-f557-49a6-85eb-8ec6e03279ec}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>sleep</value>
+			<value>hunger</value>
+			<value>thirsty</value>
+			<value>toilet</value>
+			<value>fun</value>
+			<value>hygiene start</value>
+			<value>hygiene end</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
