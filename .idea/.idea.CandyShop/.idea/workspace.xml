@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9e8b4c47-b901-4077-8e53-2284befd96ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Shrek/AC_Shrek.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Shrek/AC_Shrek.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Swamp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Swamp.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMOD/soundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMOD/soundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/ShrekDataInstance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/ShrekDataInstance.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SwampT.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwampT.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,8 @@
       <workItem from="1681222558872" duration="1808000" />
       <workItem from="1681248155468" duration="484000" />
       <workItem from="1681249703757" duration="4923000" />
-      <workItem from="1681256371583" duration="3810000" />
+      <workItem from="1681256371583" duration="3811000" />
+      <workItem from="1681333598310" duration="2839000" />
     </task>
     <servers />
   </component>

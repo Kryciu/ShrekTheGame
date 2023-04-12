@@ -429,9 +429,10 @@ GameObject:
   m_Component:
   - component: {fileID: 253337945}
   - component: {fileID: 253337944}
-  - component: {fileID: 253337943}
   - component: {fileID: 253337942}
   - component: {fileID: 253337941}
+  - component: {fileID: 253337946}
+  - component: {fileID: 253337947}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -487,14 +488,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &253337943
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253337940}
-  m_Enabled: 1
 --- !u!20 &253337944
 Camera:
   m_ObjectHideFlags: 0
@@ -553,6 +546,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+--- !u!114 &253337946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253337940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9683cc837044b6418cd23bfc2778d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music:
+    Guid:
+      Data1: -1474051739
+      Data2: 1103703431
+      Data3: -1866526062
+      Data4: 1709275417
+    Path: event:/music gameplay
+  Dialogues:
+    Guid:
+      Data1: -2132902211
+      Data2: 1296235671
+      Data3: -1957011275
+      Data4: -408391335
+    Path: event:/shrek dialog
+--- !u!114 &253337947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253337940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &259679328
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,14 +897,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c2a99ffb02db1419ff87b686d8bbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputsound:
+  FootstepsSound:
     Guid:
-      Data1: 929633380
-      Data2: 1207304296
-      Data3: -1820159345
-      Data4: 856042007
-    Path: event:/footsteps
-  speed: 0.5
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  FootstepsSpeed: 0
   ShrekData: {fileID: 11400000, guid: fb9af77b183898c4395cd68489fa20bf, type: 2}
   HungerSlider: {fileID: 481696661}
   ThirstySlider: {fileID: 1764923188}

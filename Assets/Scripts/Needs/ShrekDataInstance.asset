@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hunger: 100
   Thirsty: 100
-  Toilet: 52
+  Toilet: 100
   Hygiene: 100
   Sleep: 100
   Fun: 100
-  HungerRate: 3
-  ThirstyRate: 4
-  ToiletRate: 2
-  HygieneRate: 5
-  SleepRate: 6
-  FunRate: 7
+  HungerRate: 0.95
+  ThirstyRate: 0.7
+  ToiletRate: 1.1
+  HygieneRate: 0.85
+  SleepRate: 0.78
+  FunRate: 0.97
   MoveRate: 1

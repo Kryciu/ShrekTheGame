@@ -16,13 +16,9 @@ using FMOD.Studio;
 
 public class Needs : MonoBehaviour
 {
-
-
-    public FMODUnity.EventReference inputsound;
-    bool playerismoving;
-    public float speed;
-
-
+    //Footsteps
+    public EventReference FootstepsSound;
+    public float FootstepsSpeed;
 
     //Needs
     public DefaultShrekData ShrekData;
@@ -86,26 +82,15 @@ public class Needs : MonoBehaviour
     }
 
     void CallFootsteps()
-    { 
-
-            
-        if (IsCurrentlyMoving == true)
+    {
+        if (IsCurrentlyMoving)
         {
-
-            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
-
+            RuntimeManager.PlayOneShot(FootstepsSound);
         }
-
-
-
-
     }
-
-
-
     void Start()
     {
-        InvokeRepeating("CallFootsteps", 0, speed);
+        InvokeRepeating("CallFootsteps", 0, FootstepsSpeed);
 
         SetMaxNeeds(HungerSlider, Hunger);
         SetMaxNeeds(ThirstySlider, Thirsty);
@@ -115,7 +100,7 @@ public class Needs : MonoBehaviour
         SetMaxNeeds(FunSlider, Fun);
 
         StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime, 5.0f, "IsDrinking"));
-        //StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime));
+        StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime,5.0f,"IsDrinking"));
         StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime, 5.0f, "IsSitting"));
         StartCoroutine(UpdateNeed(Hygiene, HygieneSlider, HygieneRegen, HygieneWaitTime, 10.0f, "IsSitting"));
         StartCoroutine(UpdateNeed(Sleep, SleepSlider, SleepRegen, SleepWaitTime, 6.0f, "IsLying"));
@@ -126,21 +111,14 @@ public class Needs : MonoBehaviour
 
     {
         #region UpdateShrekAnimations
-
-
-
         if (Player.velocity.sqrMagnitude > 0)
         {
-        ShrekAnimator.SetBool("IsWalking", true);
+            ShrekAnimator.SetBool("IsWalking", true);
             IsCurrentlyMoving = true;
-
-
-
         } else if (Player.velocity.sqrMagnitude == 0)
         {
             ShrekAnimator.SetBool("IsWalking", false);
             IsCurrentlyMoving = false;
-           
         }
         #endregion
         #region RandomRoam
@@ -157,31 +135,16 @@ public class Needs : MonoBehaviour
                 if (!IsCurrentlyMoving)
                 {
                     Player.SetDestination(RandomNavmeshLocation(8.0f));
-                   
-                }
-                else
-                {
-                    if (Player.remainingDistance <= Player.stoppingDistance)
-                    {
-                        if (Player.hasPath || Player.velocity.sqrMagnitude == 0f)
-                        {
-                           
-                        }
-                    }
                 }
             }
         }
         else
         {
-            
             MoveWaitTime = ShrekData.MoveRate;
         }
-
         #endregion
     }
-
-   
-
+    
     #region NeedsFunctions
 
     public void SetMaxNeeds(Slider Value, float Needs)
