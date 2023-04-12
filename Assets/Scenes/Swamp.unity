@@ -865,6 +865,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c2a99ffb02db1419ff87b686d8bbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputsound:
+    Guid:
+      Data1: 929633380
+      Data2: 1207304296
+      Data3: -1820159345
+      Data4: 856042007
+    Path: event:/footsteps
+  speed: 0.5
   ShrekData: {fileID: 11400000, guid: fb9af77b183898c4395cd68489fa20bf, type: 2}
   HungerSlider: {fileID: 481696661}
   ThirstySlider: {fileID: 1764923188}
@@ -880,6 +888,7 @@ MonoBehaviour:
   SleepRegen: {fileID: 392754436}
   FunRegen: {fileID: 1608755427}
   ShrekAnimator: {fileID: 2061556489}
+  ShrekGO: {fileID: 299209382}
   IsCurrentlyRegenerating: 0
   IsCurrentlyMoving: 0
 --- !u!1 &373070978
