@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{45b19c42-9ecf-4d38-9a29-2f4b2c018e0e}">
+	<object class="AudioFile" id="{bbb9caa2-2c1e-4ffc-be4a-3e5ec3030d4a}">
 		<property name="assetPath">
-			<value>shrek's action/shrek- mycie się.wav</value>
+			<value>shrek's action/shrek jedzenie.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>10.369002267573697</value>
+			<value>15.5</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{daf08e20-9444-4099-aa29-28ac21e7c1c3}</destination>

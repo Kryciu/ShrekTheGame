@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: projektshrek/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638169457319266606
+  lastModified: 638171143555440281
   FileSizes:
   - Name: Desktop
     Value: 1008
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: projektshrek/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638169457319256687
+  lastModified: 638171143555420342
   FileSizes:
   - Name: Desktop
-    Value: 3661088
+    Value: 3384672
   Exists: 1
 --- !u!114 &-5163318945181000954
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: -5795307064104408459}
   StringsBanks:
   - {fileID: -7627857154834768088}
-  cacheTime: 638169457319266606
+  cacheTime: 638171143555440281
   cacheVersion: 131601
 --- !u!114 &5641277964431649310
 MonoBehaviour:

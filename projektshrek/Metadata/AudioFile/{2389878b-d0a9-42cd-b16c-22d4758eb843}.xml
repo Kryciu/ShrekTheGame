@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{d41f698e-31e0-456c-af9a-d57c669b6db2}">
+	<object class="AudioFile" id="{2389878b-d0a9-42cd-b16c-22d4758eb843}">
 		<property name="assetPath">
-			<value>shrek's action/shrek picie.wav</value>
+			<value>shrek's action/shrek sleep.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>8</value>
+			<value>10</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{daf08e20-9444-4099-aa29-28ac21e7c1c3}</destination>
