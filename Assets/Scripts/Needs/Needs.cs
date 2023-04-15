@@ -69,7 +69,7 @@ public class Needs : MonoBehaviour
 
     void Awake()
     {
-        //Initialize default variables
+        //Initialize default values
         Hunger = ShrekData.Hunger;
         Thirsty = ShrekData.Thirsty;
         Toilet = ShrekData.Toilet;
@@ -98,13 +98,15 @@ public class Needs : MonoBehaviour
         ActionInstance = RuntimeManager.CreateInstance(ActionSound);
         InvokeRepeating(nameof(CallFootsteps), 0, FootstepsSpeed);
 
+        //Initialize Needs
         SetMaxNeeds(HungerSlider, Hunger);
         SetMaxNeeds(ThirstySlider, Thirsty);
         SetMaxNeeds(ToiletSlider, Toilet);
         SetMaxNeeds(HygieneSlider, Hygiene);
         SetMaxNeeds(SleepSlider, Sleep);
         SetMaxNeeds(FunSlider, Fun);
-
+        
+        //Decrease needs over time
         StartCoroutine(UpdateNeed(Thirsty, ThirstySlider, ThirstyRegen, ThirstyWaitTime, 7.0f, "IsDrinking","thirsty",false));
         StartCoroutine(UpdateNeed(Hunger, HungerSlider, HungerRegen, HungerWaitTime,12.0f,"IsDrinking","hunger",false));
         StartCoroutine(UpdateNeed(Toilet, ToiletSlider, ToiletRegen, ToiletWaitTime, 11.0f, "IsSitting","toilet",false));

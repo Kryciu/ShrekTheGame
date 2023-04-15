@@ -24,7 +24,7 @@ public class soundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NeedsScript.IsCurrentlyRegenerating)
+        if (!NeedsScript.IsCurrentlyRegenerating)
         {
             if(!IsPlaying(DialoguesInstance))
             {

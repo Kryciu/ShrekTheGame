@@ -4,67 +4,10 @@
     <list default="true" id="9e8b4c47-b901-4077-8e53-2284befd96ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CandyShop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Swamp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Swamp.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Swamp/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Swamp/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMOD/soundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMOD/soundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/Needs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Needs/ShrekDataInstance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Needs/ShrekDataInstance.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SwampT.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwampT.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{04a3d6a8-8efb-4783-8648-a678af1fda8d}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{04a3d6a8-8efb-4783-8648-a678af1fda8d}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{0824d0db-422c-439e-8b17-904c0c13fa4d}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{0824d0db-422c-439e-8b17-904c0c13fa4d}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{10217af6-5649-44ed-b557-3fb31a048079}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{10217af6-5649-44ed-b557-3fb31a048079}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{1fd4c169-e0d0-49be-8a7e-bf8623c5e1ca}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{1fd4c169-e0d0-49be-8a7e-bf8623c5e1ca}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{22206fb2-214a-4c27-a145-b484dba2e0ce}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{22206fb2-214a-4c27-a145-b484dba2e0ce}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{229f3112-b56d-49e7-a0b1-ac33d00e482a}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{229f3112-b56d-49e7-a0b1-ac33d00e482a}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{260821b8-1bd3-415a-ada3-bf794aa91d2e}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{260821b8-1bd3-415a-ada3-bf794aa91d2e}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{2738763c-1cfb-4389-a4f4-e0d78d969e8f}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{2738763c-1cfb-4389-a4f4-e0d78d969e8f}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{2b5d0044-c6b5-4abd-bb37-9344c864d1d9}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{2b5d0044-c6b5-4abd-bb37-9344c864d1d9}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{2ba2de55-f87b-4c30-85d6-5a3c2997cf93}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{2ba2de55-f87b-4c30-85d6-5a3c2997cf93}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{2d528685-c93b-4a0c-abf1-424ee20b11ab}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{2d528685-c93b-4a0c-abf1-424ee20b11ab}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{3b9aba0a-4ee3-4b38-823f-e4e4ca51e4e5}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{3b9aba0a-4ee3-4b38-823f-e4e4ca51e4e5}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{3f98729c-ea57-46a5-8ca4-bcefb5904dc5}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{3f98729c-ea57-46a5-8ca4-bcefb5904dc5}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{4026e693-0f3f-46e4-ac81-2320e6ed5ad9}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{4026e693-0f3f-46e4-ac81-2320e6ed5ad9}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{43b04164-3db4-4160-ad99-bac5963ffca9}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{43b04164-3db4-4160-ad99-bac5963ffca9}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{43e54c17-c2d1-45fd-8003-a34bc7748cab}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{43e54c17-c2d1-45fd-8003-a34bc7748cab}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{46ff5862-e48b-453d-bbec-1a30cf41263b}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{46ff5862-e48b-453d-bbec-1a30cf41263b}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{4d44cb51-ea07-49d4-8a73-bd17ce711e18}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{4d44cb51-ea07-49d4-8a73-bd17ce711e18}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{5b5b2db2-0eaf-4f9b-868e-d5eaaa83da59}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{5b5b2db2-0eaf-4f9b-868e-d5eaaa83da59}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{6bcce68c-b08f-4577-8a80-276254b34d73}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{6bcce68c-b08f-4577-8a80-276254b34d73}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{724316ee-f15c-4fb5-815a-9241edd362c7}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{724316ee-f15c-4fb5-815a-9241edd362c7}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{77b03ba2-52da-4e2f-923f-6a4477ccd4ab}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{77b03ba2-52da-4e2f-923f-6a4477ccd4ab}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{780e6bfe-f2aa-42c4-81dd-8311aa5794c4}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{780e6bfe-f2aa-42c4-81dd-8311aa5794c4}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{7837928a-9296-4fb7-964c-ec3c6c59394d}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{7837928a-9296-4fb7-964c-ec3c6c59394d}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{8c51b39a-3e3d-4e3c-9660-843131b2309c}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{8c51b39a-3e3d-4e3c-9660-843131b2309c}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{94d27cc1-2460-4641-b584-3525dcf63cc6}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{94d27cc1-2460-4641-b584-3525dcf63cc6}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{a7710bc7-2f14-4a0d-96a6-86205d06bfb5}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{a7710bc7-2f14-4a0d-96a6-86205d06bfb5}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{b17cabaf-2d96-43b5-9085-0a13a2b8746c}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{b17cabaf-2d96-43b5-9085-0a13a2b8746c}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{b30d4775-59d2-40fb-b409-6579a77c37d2}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{b30d4775-59d2-40fb-b409-6579a77c37d2}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{b574c6c6-4deb-4ef6-964a-ad0d20a9dcd5}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{b574c6c6-4deb-4ef6-964a-ad0d20a9dcd5}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{bbc24a4d-dc79-4ec5-8e1a-dff3ea7c7f71}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{bbc24a4d-dc79-4ec5-8e1a-dff3ea7c7f71}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{be2e0e89-984f-4715-a386-e68fa94eb481}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{be2e0e89-984f-4715-a386-e68fa94eb481}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{d41f698e-31e0-456c-af9a-d57c669b6db2}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{d41f698e-31e0-456c-af9a-d57c669b6db2}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{d8eb9541-bb53-40bb-bd5c-e8307d1b067f}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{d8eb9541-bb53-40bb-bd5c-e8307d1b067f}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{dc4b5155-fa0c-421e-a8be-89cfbeb6e4ad}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{dc4b5155-fa0c-421e-a8be-89cfbeb6e4ad}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{e1fc94ae-bd9b-47aa-9156-690d1dfdeddc}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{e1fc94ae-bd9b-47aa-9156-690d1dfdeddc}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{ed39d8a4-71ad-4251-8d0d-f6e5097ee573}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{ed39d8a4-71ad-4251-8d0d-f6e5097ee573}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{edb33655-137d-4ffb-88eb-f0088b5dbaf9}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{edb33655-137d-4ffb-88eb-f0088b5dbaf9}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{f845930e-3a0b-4477-8318-41415b1de5af}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{f845930e-3a0b-4477-8318-41415b1de5af}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.cache/{fb92aea3-ca77-4df0-a179-a4eb43e18048}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/.cache/{fb92aea3-ca77-4df0-a179-a4eb43e18048}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/Event/{37691464-0068-47f6-8f92-8293172a0633}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/Event/{80de7ebd-fc97-4d42-b560-5a8b5971a8e7}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/Event/{90b9d6c8-8355-4ec0-b362-300e496b4887}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/Event/{a823c165-2d87-41c9-9212-bf901979e165}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/Event/{fc6ad7a1-cdbe-4c30-b5ae-3218afc79b55}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/ParameterPreset/{7742700a-43db-4dc7-b35d-19c24de1fcc8}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/Metadata/ParameterPreset/{a45edb97-e295-45fb-a6a6-6b7c0e82160e}.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/.unsaved/metadataFileMapping.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/Build/Desktop/Master.bank" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/Build/Desktop/Master.bank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/Metadata/Event/{37691464-0068-47f6-8f92-8293172a0633}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/Metadata/Event/{37691464-0068-47f6-8f92-8293172a0633}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/Metadata/Event/{80de7ebd-fc97-4d42-b560-5a8b5971a8e7}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/Metadata/Event/{80de7ebd-fc97-4d42-b560-5a8b5971a8e7}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/Metadata/Event/{a823c165-2d87-41c9-9212-bf901979e165}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/Metadata/Event/{a823c165-2d87-41c9-9212-bf901979e165}.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projektshrek/Metadata/Event/{d37086be-9d68-4bef-934d-b64f1453e75f}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projektshrek/Metadata/Event/{d37086be-9d68-4bef-934d-b64f1453e75f}.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +102,7 @@
       <workItem from="1681256371583" duration="3811000" />
       <workItem from="1681333598310" duration="2839000" />
       <workItem from="1681337038409" duration="5089000" />
+      <workItem from="1681523576258" duration="853000" />
     </task>
     <servers />
   </component>
